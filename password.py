@@ -7,7 +7,7 @@ class User:
         """
         __init__method helps define properties of objects
        
-       Args:
+       Arg:
             username: Name associated with account
         """
         self.username = username
@@ -16,7 +16,14 @@ class Credentials:
     """
     Class that generate new instances of passwords
     """
-    
+
+    def __init__(self,password):
+        """
+        init method that helps define password properties
+        Arg:
+            password:password for specific account
+        """
+        self.password = password
 
 
 
