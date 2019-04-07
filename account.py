@@ -39,7 +39,7 @@ class Credentials:
         """
         Credentials.account_list.remove(self)
 
-    @classmethod
+    @classmethod #decorator(informs python that this is a method for the entire class)
     def find_by_username(cls,username):
         """
         method that takes in a username and returns credentials that match that username
