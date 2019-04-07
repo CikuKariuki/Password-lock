@@ -24,6 +24,14 @@ class Credentials:
             password:password for specific account
         """
         self.password = password
+    account_list = []
+
+    def save_credentials(self):
+        """
+        save_credentials method saves credential objects into account_list
+        """
+        Credentials.account_list.append(self)
+
 
 
 
