@@ -67,6 +67,16 @@ class TestCredentials(unittest.TestCase): #testcase checks for an expected resul
         self.assertEqual(len(Credentials.account_list),2)
 
 
+    def test_delete_credentials(self):
+        """
+        test to see if we can remove account credentials from our list
+        """
+        self.new_account.save_credentials()
+        test_credentials = Credentials("FbJames","Facebook") #new credentials
+        test_credentials.save_credentials()
+        self.new_account.delete_credentials() #deleting a credentials object
+        self.assertEqual(len(Credentials.account_list),1)
+
 
 if __name__ == '__main__':
     unittest.main()    
