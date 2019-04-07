@@ -51,6 +51,13 @@ class TestCredentials(unittest.TestCase): #testcase checks for an expected resul
         self.new_account.save_credentials() #save the user info
         self.assertEqual(len(Credentials.account_list),1)
 
+    def tearDown(self):
+        """
+        tearDown method does clean up after each test case has run
+        """
+        Credentials.account_list = []
+        
+
     def test_save_multiple_credentials(self):
         """test to check if we can save multiple account credentials.
         """
@@ -58,6 +65,8 @@ class TestCredentials(unittest.TestCase): #testcase checks for an expected resul
         test_credentials = Credentials("InstaJames","Hello000")#new account
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.account_list),2)
+
+
 
 if __name__ == '__main__':
     unittest.main()    
