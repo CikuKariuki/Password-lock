@@ -1,6 +1,6 @@
 class User:
     """
-    Class that generates new instances of passwords
+    Class that generates new instances of username
     """
 
     def __init__(self,username):
@@ -11,6 +11,12 @@ class User:
             username: Name associated with account
         """
         self.username = username
+
+class Credentials:
+    """
+    Class that generate new instances of passwords
+    """
+    
 
 
 
