@@ -21,7 +21,7 @@ class TestUser(unittest.TestCase): #testcase checks for an expected result
         test_init test case to test if the object was initialised properly
         """
 
-        self.assertEqual(self.new_account.username,"James")
+        self.assertEqual(self.new_account.users_name,"James")
 
 class TestCredentials(unittest.TestCase): #testcase checks for an expected result
     """
@@ -35,13 +35,13 @@ class TestCredentials(unittest.TestCase): #testcase checks for an expected resul
         """
         The setup method is used to run before each testcase.
         """
-        self.new_account = Credentials("12345678") #create user object
+        self.new_account = Credentials("TwitterJames","12345678") #create credentials object
     
     def test_init(self):
         """
         test_init test case to test if the object was initialised properly
         """
-
+        self.assertEqual(self.new_account.username,"TwitterJames")
         self.assertEqual(self.new_account.password,"12345678")
     
     def test_save_credentials(self):
@@ -50,6 +50,14 @@ class TestCredentials(unittest.TestCase): #testcase checks for an expected resul
         """
         self.new_account.save_credentials() #save the user info
         self.assertEqual(len(Credentials.account_list),1)
+
+    def test_save_multiple_credentials(self):
+        """test to check if we can save multiple account credentials.
+        """
+        self.new_account.save_credentials()
+        test_credentials = Credentials("InstaJames","Hello000")#new account
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.account_list),2)
 
 if __name__ == '__main__':
     unittest.main()    

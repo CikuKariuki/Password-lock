@@ -1,28 +1,29 @@
 class User:
     """
-    Class that generates new instances of username
+    Class that generates new instances of user's_name
     """
 
-    def __init__(self,username):
+    def __init__(self,users_name):
         """
         __init__method helps define properties of objects
        
        Arg:
-            username: Name associated with account
+            users_name: Name associated with account
         """
-        self.username = username
+        self.users_name = users_name
 
 class Credentials:
     """
     Class that generate new instances of passwords
     """
 
-    def __init__(self,password):
+    def __init__(self,username,password):
         """
         init method that helps define password properties
         Arg:
             password:password for specific account
         """
+        self.username = username
         self.password = password
     account_list = []
 
