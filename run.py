@@ -1,4 +1,5 @@
 #!/usr/bin/env python3.6
+import random
 from account import Credentials 
 from account import User
 
@@ -44,7 +45,7 @@ def main():
     print("Hello, create a new account. What is your name?")
     username = (input())
 
-    print(f"Hey{username}, what account would you like to create?")
+    print(f"Hey {username}, what account would you like to create?")
     print('\n')
     while True:
         print("Use these short codes: ca-create a new account, dc-display credentials, fc-find credentials, ex-exist account_list ")
@@ -60,8 +61,18 @@ def main():
             print("username")
             username = input()
 
-            print("Password")
-            password = input()
+            print("would you want a generated password? y/N")
+            answer = input()
+            if answer == 'y':
+                chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789~!@#$%^&**()_+=+'
+                length= int(input('password length?'))
+                password=''
+                for i in range(length):
+                    password += random.choice(chars)
+                print("genpassword: ")
+            else: 
+                print("password")
+                password=input()    
 
             save_credentials(create_account(users_name,username,password))
             print('\n')
@@ -92,5 +103,5 @@ def main():
         else: print("I really didn't get that. Please use the short codes")
 
 if __name__ == '__main__':
-
     main()
+    
