@@ -15,15 +15,16 @@ Python 3.6
 
 | BEHAVIOUR    | INPUT   |  OUTPUT |
 | :------------- | :------------- | :--------------- |
-| Search username | Login username  | Username and password of the account |
-| Delete Username | Delete username  | Username and password credentials deleted |
-| New account login | Add new username | Addition to the account list. |
+| Create account | User's name  | Username of account |
+| Username | Name to use in account  | Username |
+| Password Generator | yes to question,'would you like a generated password?' | A generated password |
+| Password | Desired password | Desired password |
 
 
 ## Requirements
 
 Visual studio, Atom.
-(Any text editor conversant with pythin 3.6)
+(Any text editor conversant with python 3.6)
 
 ## Contact
 
