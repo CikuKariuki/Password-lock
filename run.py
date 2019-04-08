@@ -42,4 +42,55 @@ def copy_credentials(Credentials):
 
 def main():
     print("Hello, create a new account. What is your name?")
+    username = (input())
 
+    print(f"Hey{username}, what account would you like to create?")
+    print('\n')
+    while True:
+        print("Use these short codes: ca-create a new account, dc-display credentials, fc-find credentials, ex-exist account_list ")
+        short_code = input().lower()
+
+        if short_code == 'ca':
+            print("New Account")
+            print("-"*10)
+
+            print("User's_name")
+            users_name = input()
+
+            print("username")
+            username = input()
+
+            print("Password")
+            password = input()
+
+            save_credentials(create_account(users_name,username,password))
+            print('\n')
+                
+        elif short_code == 'dc':
+            if display_credentials(Credentials):
+                print("here is a list of account usernames and passwords")
+                print('\n')
+                for credentials in display_credentials(Credentials):
+                    print(f"{credentials.username}{credentials.password}")
+                    print('\n')
+            else: print('\n')
+            print("You don't seem to have any accounts yet")
+            print('\n')
+
+        elif short_code == 'fc':
+            print("Enter the username you want to search for")
+            search_username = input()
+            if find_credentials(search_username):
+                search_credentials = find_credentials(search_username)
+                print(f"Username {search_credentials.username}")
+                print(f"Password {search_credentials.password}")
+            else: print("that username does not exist")
+
+        elif short_code == 'ex':
+            print(f"Bye {username}")
+            break
+        else: print("I really didn't get that. Please use the short codes")
+
+if __name__ == '__main__':
+
+    main()
