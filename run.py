@@ -29,7 +29,7 @@ def find_credentials(username):
     """
     return Credentials.find_by_username(username)
 
-def display_credentials(Credentials):
+def display_credentials():
     """
     function that returns all saved credentials
     """
@@ -68,8 +68,8 @@ def main():
                 length= int(input('password length?'))
                 password=''
                 for i in range(length):
-                    password += random.choice(chars)
-                print("genpassword: ")
+                    password = random.choice(chars)
+                print("password")
             else: 
                 print("password")
                 password=input()    
@@ -78,10 +78,10 @@ def main():
             print('\n')
                 
         elif short_code == 'dc':
-            if display_credentials(Credentials):
+            if display_credentials():
                 print("here is a list of account usernames and passwords")
                 print('\n')
-                for credentials in display_credentials(Credentials):
+                for credentials in display_credentials():
                     print(f"{credentials.username}{credentials.password}")
                     print('\n')
             else: print('\n')

@@ -50,7 +50,13 @@ class Credentials:
             if credentials.username == username:
                 return credentials
 
-
+    @classmethod
+    def display_credentials(cls):
+        """
+        method that shows us the credentials
+        """
+        return cls.account_list 
+        
     @classmethod
     def copy_password(cls,username):
         credentials_found = Credentials.find_by_username(username)
