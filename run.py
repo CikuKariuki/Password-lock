@@ -68,8 +68,8 @@ def main():
                 length= int(input('password length?'))
                 password=''
                 for i in range(length):
-                    password = random.choice(chars)
-                print("password")
+                    password += random.choice(chars)
+                print(password)
             else: 
                 print("password")
                 password=input()    
@@ -82,11 +82,11 @@ def main():
                 print("here is a list of account usernames and passwords")
                 print('\n')
                 for credentials in display_credentials():
-                    print(f"{credentials.username}{credentials.password}")
+                    print(f"username: {credentials.username} \npassword: {credentials.password}")
                     print('\n')
-            else: print('\n')
-            print("You don't seem to have any accounts yet")
-            print('\n')
+            else: 
+                print("You don't seem to have any accounts yet")
+                print('\n')
 
         elif short_code == 'fc':
             print("Enter the username you want to search for")
