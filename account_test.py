@@ -95,6 +95,7 @@ class TestCredentials(unittest.TestCase): #testcase checks for an expected resul
     #     self.new_account.save_credentials()
     #     Credentials.copy_password("TwitterJames")
     #     self.assertEqual(self.new_account.password,pyperclip.paste())
+
     def test_display_credentials(self):
         """
         test to check if display_credentials works
